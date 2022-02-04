@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-v1
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       role: hello-v1
@@ -25,7 +25,7 @@ kind: Deployment
 metadata:
   name: hello-v2
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       role: hello-v2
@@ -36,6 +36,28 @@ spec:
     spec:
       containers:
       - name: hello-v2
+        image: gcr.io/google-samples/hello-app:2.0
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-vx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: hello-vx
+  template:
+    metadata:
+      labels:
+        role: hello-vx
+    spec:
+      containers:
+      - name: hello-vx
         image: gcr.io/google-samples/hello-app:2.0
         ports:
         - containerPort: 8080
@@ -63,3 +85,5 @@ spec:
     targetPort: 8080
   selector:
     role: hello-v2
+
+

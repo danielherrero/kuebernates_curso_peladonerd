@@ -1,4 +1,4 @@
-FROM debian:11.2
+FROM debian
 
 #WORKDIR /app
 #COPY . .
@@ -9,4 +9,5 @@ RUN apt-get update
 RUN apt-get install iputils-ping -y
 RUN apt-get install curl -y
 RUN apt-get install procps -y
+RUN apt-get install vim-tiny -y
 CMD ["sh"]
