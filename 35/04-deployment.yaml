@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
+  labels:
+    mikey: mivalue
 spec:
   selector:
     matchLabels:
@@ -10,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginxx
     spec:
       containers:
       - name: nginx
@@ -27,10 +29,10 @@ spec:
         resources:
           requests:
             memory: "64Mi"
-            cpu: "200m"
+            cpu: "2m"
           limits:
             memory: "128Mi"
-            cpu: "500m"
+            cpu: "5m"
         readinessProbe:
           httpGet:
             path: /

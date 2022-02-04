@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: debian
-    image: debian
+    image: dherrero/midebian
     args:
     - sleep
     - infinity

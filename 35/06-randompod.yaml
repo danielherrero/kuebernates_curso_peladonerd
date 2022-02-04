@@ -6,6 +6,8 @@ spec:
   containers:
   - name: debian
     image: midebian
+
+    imagePullPolicy: IfNotPresent 
     args:
     - sleep
     - infinity
