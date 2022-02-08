@@ -10,7 +10,7 @@ spec:
     - name: MI_VARIABLE
       value: "pelado"
     - name: MI_OTRA_VARIABLE
-      value: "pelade"
+      value: pelade sin comillas
     - name: DD_AGENT_HOST
       valueFrom:
         fieldRef:
