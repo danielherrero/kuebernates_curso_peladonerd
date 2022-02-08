@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pod-hello-v1
+  name: deployment-hello-v1
 spec:
   replicas: 1
   selector:
@@ -23,7 +23,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pod-hello-v2
+  name: deployment-hello-v2
 spec:
   replicas: 1
   selector:

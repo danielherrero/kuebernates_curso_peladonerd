@@ -2,12 +2,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hello-app
+  name: ing-hello-app
   annotations:
     ingressclass.kubernetes.io/is-default-class: "true"
     
 spec:
-  ingressClassName: nginx-example
+  #ingressClassName: nginx-example
+  defaultBackend:
+    service:
+      name: service-hello-v1
+      port:
+        number: 8080
   rules:
   - http:
       paths:
@@ -15,14 +20,14 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: hello-v1
+            name: service-hello-v1
             port:
               number: 8080
       - path: /v2
         pathType: Prefix
         backend:
           service:
-            name: hello-v2
+            name: service-hello-v2
             port:
               number: 8080
         

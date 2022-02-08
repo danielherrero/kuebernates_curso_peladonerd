@@ -9,3 +9,18 @@ spec:
   - name: container-nginx
     image: nginx:alpine
     imagePullPolicy: IfNotPresent
+    env:
+      - name: MI_VARIABLE
+        value: "mi_valor"
+      - name: MI_IP
+        valueFrom:
+          fieldRef: 
+            fieldPath: status.hostIP
+    resources:
+      requests:
+        memory: "64M"
+      limits:
+        memory: "128M"
+
+    
+
