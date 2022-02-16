@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: game-demo
+data:
+  propiedad1: "1"
+  config_file: "configuracion.properties"
+  game.properties: |
+    game.properties.1=1
+    game.properties.2=2
+  configuracion.properties: |
+    color.good=purple
+    color.bad=yellow
+    allow.textmode=true

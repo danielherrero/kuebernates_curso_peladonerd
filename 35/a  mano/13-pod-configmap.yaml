@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: iginx
+      image: nginx:alpine
+      env:
+        - name: PLAYER_INITIAL_LIVES
+          valueFrom:
+            configMapKeyRef:
+              name: game-demo
+              key: propiedad1
+        - name: CONFIG_FILE
+          valueFrom:
+            configMapKeyRef:
+              name: game-demo
+              key: config_file
+      volumeMounts:
+        - name: config
+          mountPath: "/config"
+          readOnly: true
+  volumes:
+    - name: config
+      configMap:
+        name: game-demo
+        items:
+          - key: game.properties
+            path: remap-game.properties
+          - key: configuracion.properties
+            path: remap-configuracion.properties
