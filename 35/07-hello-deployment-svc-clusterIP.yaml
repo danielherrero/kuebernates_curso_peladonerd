@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      role: hello
+      role: hello-role
   template:
     metadata:
       labels:
-        role: hello
+        role: hello-role
     spec:
       containers:
       - name: hello
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello
+  name: hello-service
 spec:
   ports:
   - port: 8080
     targetPort: 8080
   selector:
-    role: hello
+    role: hello-role

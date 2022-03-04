@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: debian
+  name: debian-pod
 spec:
   containers:
-  - name: debian
-    image: midebian
+  - name: debian-container
+    image: dherrero/midebian
 
     imagePullPolicy: IfNotPresent 
     args:
