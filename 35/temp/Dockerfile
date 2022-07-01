@@ -10,3 +10,4 @@ RUN apt-get install iputils-ping -y
 RUN apt-get install curl -y
 RUN apt-get install procps -y
 RUN apt-get install vim-tiny -y
+#CMD sh -c 'trap "exit" TERM; while true; do sleep 1; done'
